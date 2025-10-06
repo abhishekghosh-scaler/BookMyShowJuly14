@@ -36,4 +36,11 @@ public class UserController
 
         return signUpResponseDto;
     }
+
+    public void login(String username, String password)
+    {
+        User user = userService.login(username, password);
+        System.out.println(user.getUsername());
+        System.out.println(user.getPassword());
+    }
 }

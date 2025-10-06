@@ -4,16 +4,11 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
 import jakarta.persistence.OneToOne;
-import lombok.Getter;
-import lombok.Setter;
 
 import java.util.Date;
 
-@Getter
-@Setter
 @Entity
-public class ShowSeat extends BaseModel
-{
+public class ShowSeat extends BaseModel {
     @OneToOne
     private Show show;
     @OneToOne
@@ -23,4 +18,36 @@ public class ShowSeat extends BaseModel
     private ShowSeatStatus status;
 
     private Date bookedAt;
+
+    public Show getShow() {
+        return this.show;
+    }
+
+    public Seat getSeat() {
+        return this.seat;
+    }
+
+    public ShowSeatStatus getStatus() {
+        return this.status;
+    }
+
+    public Date getBookedAt() {
+        return this.bookedAt;
+    }
+
+    public void setShow(Show show) {
+        this.show = show;
+    }
+
+    public void setSeat(Seat seat) {
+        this.seat = seat;
+    }
+
+    public void setStatus(ShowSeatStatus status) {
+        this.status = status;
+    }
+
+    public void setBookedAt(Date bookedAt) {
+        this.bookedAt = bookedAt;
+    }
 }

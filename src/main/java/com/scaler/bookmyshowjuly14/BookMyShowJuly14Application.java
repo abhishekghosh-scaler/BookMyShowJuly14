@@ -8,8 +8,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 
 @SpringBootApplication
+@EnableJpaAuditing
 public class BookMyShowJuly14Application implements CommandLineRunner
 {
     @Autowired
@@ -22,16 +24,18 @@ public class BookMyShowJuly14Application implements CommandLineRunner
     @Override
     public void run(String... args) throws Exception
     {
-        SignUpRequestDto signUpRequestDto = new SignUpRequestDto();
-        signUpRequestDto.setUsername("test1@scaler.com");
-        signUpRequestDto.setPassword("password");
+//        SignUpRequestDto signUpRequestDto = new SignUpRequestDto();
+//        signUpRequestDto.setUsername("test3@scaler.com");
+//        signUpRequestDto.setPassword("password");
+//
+//        SignUpResponseDto signUpResponseDto = userController.signUp(signUpRequestDto);
+//        if(signUpResponseDto.getStatus().equals(ResponseStatus.SUCCESS))
+//        {
+//            System.out.println("User created successfully");
+//        }else {
+//            System.out.println("User creation failed");
+//        }
 
-        SignUpResponseDto signUpResponseDto = userController.signUp(signUpRequestDto);
-        if(signUpResponseDto.getStatus().equals(ResponseStatus.SUCCESS))
-        {
-            System.out.println("User created successfully");
-        }else {
-            System.out.println("User creation failed");
-        }
+        userController.login("test3@scaler.com", "password");
     }
 }
