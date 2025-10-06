@@ -17,4 +17,10 @@ public class User extends BaseModel
 
     @OneToMany
     private List<Booking> bookings;
+
+    @OneToMany
+    private List<ShowSeat> showSeats;
+
+    @OneToMany
+    private List<ShowSeatType> showSeatTypes;
 }
